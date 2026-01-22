@@ -1049,13 +1049,12 @@ PACKAGES="$PACKAGES luci-app-ramfree luci-i18n-ramfree-zh-cn"
 #PACKAGES="$PACKAGES filebrowser luci-app-filebrowser-go luci-i18n-filebrowser-go-zh-cn"
 
 # ============= T95 硬件支持修正版 =============
-
 # 1. 无线与蓝牙 (兼容 AP6255/AP6356S)
-PACKAGES="$PACKAGES kmod-brcmfmac brcmfmac-firmware-sdio wpad-mesh-openssl"
+PACKAGES="$PACKAGES kmod-brcmfmac"
 PACKAGES="$PACKAGES kmod-bluetooth"
 
 # 2. 内置音频/声卡支持
-PACKAGES="$PACKAGES kmod-sound-core kmod-sound-soc-core alsa-lib"
+PACKAGES="$PACKAGES kmod-sound-core kmod-sound-soc-core"
 
 # 追加自定义包
 PACKAGES="$PACKAGES $CUSTOM_PACKAGES"
