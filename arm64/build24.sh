@@ -1048,21 +1048,14 @@ PACKAGES="$PACKAGES luci-app-ramfree luci-i18n-ramfree-zh-cn"
 #PACKAGES="$PACKAGES openlist2 luci-app-openlist2 luci-i18n-openlist2-zh-cn"
 #PACKAGES="$PACKAGES filebrowser luci-app-filebrowser-go luci-i18n-filebrowser-go-zh-cn"
 
-# ============= T95 硬件增强配置 (AP6255/AP6356S) =============
-# 无线驱动
-PACKAGES="$PACKAGES kmod-brcmfmac brcmfmac-firmware-43430-sdio brcmfmac-firmware-43455-sdio wpad-basic-mbedtls"
-# 蓝牙支持
-PACKAGES="$PACKAGES kmod-bluetooth bluez-daemon bluez-utils kmod-hci-uart"
-# 内置声卡
-PACKAGES="$PACKAGES kmod-sound-core kmod-sound-soc-core alsa-utils"
-# ============================================================
+# ============= T95 硬件支持修正版 =============
 
-# 4. 如果你的设备确需 Realtek 无线 (备选)
-PACKAGES="$PACKAGES kmod-rtl8xxxu rtl8192eu-firmware"
+# 1. 无线与蓝牙 (兼容 AP6255/AP6356S)
+PACKAGES="$PACKAGES kmod-brcmfmac brcmfmac-firmware-sdio wpad-mesh-openssl"
+PACKAGES="$PACKAGES kmod-bluetooth"
 
-# 针对电视盒子声卡的额外用户态支持
-PACKAGES="$PACKAGES alsa-utils alsa-ucm-conf kmod-sound-soc-hdmi-codec"
-# =========================================================
+# 2. 内置音频/声卡支持
+PACKAGES="$PACKAGES kmod-sound-core kmod-sound-soc-core alsa-lib"
 
 # 追加自定义包
 PACKAGES="$PACKAGES $CUSTOM_PACKAGES"
